@@ -7,4 +7,7 @@
         "pylint_django"
     ],
     "python.linting.pylintEnabled": true,
+    "python.linting.pep8Args": [
+        "--ignore=E501"
+    ]
 }
