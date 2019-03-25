@@ -3,6 +3,7 @@ from django.test import TestCase
 from .views import home, board_topics, new_topic
 from django.contrib.auth.models import User
 from .models import Board, Topic, Post
+from .forms import NewTopicForm
 
 
 class HomeTests(TestCase):
@@ -86,30 +87,10 @@ class NewTopicTests(TestCase):
         response = self.client.get(new_topic_url)
         self.assertContains(response, 'href="{0}"'.format(board_topics_url))
 
-
-class NewTopicTests(TestCase):
-    def setUp(self):
-        Board.objects.create(name='Django', description='Django board.')
-        # <- included this line here
-        User.objects.create_user(
-            username='john', email='john@doe.com', password='123')
-
-    # ...
-
     def test_csrf(self):
         url = reverse('new_topic', kwargs={'pk': 1})
         response = self.client.get(url)
         self.assertContains(response, 'csrfmiddlewaretoken')
-
-    def test_new_topic_valid_post_data(self):
-        url = reverse('new_topic', kwargs={'pk': 1})
-        data = {
-            'subject': 'Test title',
-            'message': 'Lorem ipsum dolor sit amet'
-        }
-        response = self.client.post(url, data)
-        self.assertTrue(Topic.objects.exists())
-        self.assertTrue(Post.objects.exists())
 
     def test_new_topic_invalid_post_data(self):
         '''
