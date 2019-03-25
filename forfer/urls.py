@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
-
 from boards import views
 from accounts import views as accounts_views
 from django.contrib.auth import views as auth_views
