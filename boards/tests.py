@@ -1,5 +1,6 @@
+from django.urls import resolve, reverse
 from django.test import TestCase
-from django.urls import reverse
+from .views import home
 
 
 class HomeTests(TestCase):
@@ -7,3 +8,7 @@ class HomeTests(TestCase):
         url = reverse('home')
         response = self.client.get(url)
         self.assertEquals(response.status_code, 200)
+
+    def test_home_url_resolves_home_view(self):
+        view = resolve('/')
+        self.assertEquals(view.func, home)
