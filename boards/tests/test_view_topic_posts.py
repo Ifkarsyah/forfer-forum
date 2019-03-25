@@ -8,7 +8,7 @@ from ..models import Board, Post, Topic
 class TopicPostsTests(TestCase):
     def setUp(self):
         board = Board.objects.create(
-            name='Django', description='Django board.')
+            name='Django', description='Forfer.')
         user = User.objects.create_user(
             username='john', email='john@doe.com', password='123')
         topic = Topic.objects.create(

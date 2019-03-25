@@ -9,7 +9,7 @@ from ..views import new_topic
 
 class NewTopicTests(TestCase):
     def setUp(self):
-        Board.objects.create(name='Django', description='Django board.')
+        Board.objects.create(name='Forfer', description='Forfer.')
         User.objects.create_user(
             username='john', email='john@doe.com', password='123')
         self.client.login(username='john', password='123')
@@ -84,7 +84,7 @@ class NewTopicTests(TestCase):
 
 class LoginRequiredNewTopicTests(TestCase):
     def setUp(self):
-        Board.objects.create(name='Django', description='Django board.')
+        Board.objects.create(name='Forfer', description='Forfer.')
         self.url = reverse('new_topic', kwargs={'pk': 1})
         self.response = self.client.get(self.url)
 

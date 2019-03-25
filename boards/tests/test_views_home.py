@@ -7,6 +7,6 @@ from ..models import Board
 class HomeTests(TestCase):
     def setUp(self):
         self.board = Board.objects.create(
-            name='Django', description='Django board.')
+            name='Django', description='Forfer.')
         url = reverse('home')
         self.response = self.client.get(url)

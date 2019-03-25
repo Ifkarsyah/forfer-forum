@@ -5,7 +5,7 @@ from ..models import Board
 
 class LoginRequiredNewTopicTests(TestCase):
     def setUp(self):
-        Board.objects.create(name='Django', description='Django board.')
+        Board.objects.create(name='Forfer', description='Forfer.')
         self.url = reverse('new_topic', kwargs={'pk': 1})
         self.response = self.client.get(self.url)
 

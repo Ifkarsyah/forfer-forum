@@ -6,7 +6,7 @@ from ..models import Board
 
 class BoardTopicsTests(TestCase):
     def setUp(self):
-        Board.objects.create(name='Django', description='Django board.')
+        Board.objects.create(name='Django', description='Forfer.')
 
     def test_board_topics_view_success_status_code(self):
         url = reverse('board_topics', kwargs={'pk': 1})
