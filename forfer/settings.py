@@ -27,7 +27,7 @@ SECRET_KEY = config(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['localhost', 'forfer.com']
+ALLOWED_HOSTS = ['localhost', 'forfer.herokuapp.com']
 
 
 # Application definition
