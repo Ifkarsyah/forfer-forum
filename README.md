@@ -11,7 +11,7 @@ Typical forum with basic authentication system.
 ## Installation
 
 ```sh
-pip3 install requirements.txt
+pip3 install -r requirements.txt
 ```
 
 ## Running
